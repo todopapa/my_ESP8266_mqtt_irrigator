@@ -1,2 +1,5 @@
 # my_ESP8266_mqtt_irrigator
-EOriginal EasyIoT Cloud source code examples and libraries. More at http://iot-playground.com/
+My EasyIoT Cloud source code examples
+For original EasyIoT Cloud source code examplesand libraries, visit http://iot-playground.com/ for more information.
+
+
