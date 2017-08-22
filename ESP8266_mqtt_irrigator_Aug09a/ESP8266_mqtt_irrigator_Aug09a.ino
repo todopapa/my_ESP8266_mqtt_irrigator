@@ -2,20 +2,16 @@
 #include <MQTT.h>
 #include <EEPROM.h>
 
-
 #define DEBUG
 
+#define AP_SSID     "xxxxxxxxx"
+#define AP_PASSWORD "xxxxxxxxx"
 
-#define AP_SSID     "aterm-2681f7-g"
-#define AP_PASSWORD "1c994cafe7869"
-
-#define EIOTCLOUD_USERNAME "zugan2"
-#define EIOTCLOUD_PASSWORD "maeh@4321"
+#define EIOTCLOUD_USERNAME "xxxxxx"
+#define EIOTCLOUD_PASSWORD "xxxxxxx"
 
 // create MQTT object
 #define EIOT_CLOUD_ADDRESS "cloud.iot-playground.com"
-
-
 
 #define PIN_PUMP         13   //BUILTIN_LED //D0  // nodemcu built in LED
 #define PIN_BUTTON       12    // D3  // nodemcu flash button
@@ -52,19 +48,12 @@ struct StoreStruct {
   0,
 };
 
-
-
-
-
-
 #define PARAM_HUMIDITY_TRESHOLD   "/Sensor.Parameter1"
 #define PARAM_MANUAL_AUTO_MODE    "/Sensor.Parameter2"
 #define PARAM_PUMP_ON             "/Sensor.Parameter3"
 #define PARAM_HUMIDITY            "/Sensor.Parameter4"
 
-
 #define MS_IN_SEC  1000 // 1S  
-
 
 MQTT myMqtt("", EIOT_CLOUD_ADDRESS, 1883);
 
@@ -147,7 +136,6 @@ void setup() {
   
   Serial.print("ModuleId: ");
   Serial.println(storage.moduleId);
-
 
   //create module if necessary 
   if (storage.moduleId == 0)
@@ -247,8 +235,6 @@ void loop() {
     else
       state = s_irrigation_stop;
   }
-  
-
 
   // post auto mode changes
   if (autoModeOld != autoMode)
@@ -325,7 +311,6 @@ void loop() {
      Serial.println(valueStr);  
    }
    
-   
    // irrigator state machine
    switch(state)
    {
@@ -375,7 +360,6 @@ void loop() {
        break;
    }
   }
-  
 }
 
 void loadConfig() {
